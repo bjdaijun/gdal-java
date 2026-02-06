@@ -64,7 +64,7 @@ RUN apt update \
 	libpcre2-8-0 libpcre2-16-0 libpcre2-32-0 libpcre2-posix3 \
 	libpoppler126 libqhull8.0 libqhull-r8.0 libqhullcpp8.0 \
 	librasterlite2-1 libspatialite7 libsqlite3-0 libsfcgal1 \
-	libwebp7 libxerces-c3.2 zlib1g libzstd1 \
+	libwebp7 libxerces-c3.2 zlib1g libzstd1 wget\
 	&& apt autopurge -y \
 	&& apt clean \
 	&& rm -rf /var/lib/apt/lists/*
