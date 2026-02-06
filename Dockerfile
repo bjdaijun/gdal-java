@@ -71,10 +71,11 @@ RUN apt update \
 # Install maven
 ENV MAVEN_VERSION=3.9.6
 ENV MAVEN_HOME=/opt/maven
-RUN wget https://dlcdn.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz -O /tmp/maven.tar.gz && \
+RUN wget https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz -O /tmp/maven.tar.gz && \
     mkdir -p ${MAVEN_HOME} && \
     tar -xzf /tmp/maven.tar.gz -C ${MAVEN_HOME} --strip-components=1 && \
     rm /tmp/maven.tar.gz
+
 # 设置环境变量
 ENV PATH=${MAVEN_HOME}/bin:${PATH}
 
