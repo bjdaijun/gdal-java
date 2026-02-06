@@ -40,7 +40,8 @@ RUN cd /gdal-src \
 	&& make install
 
 # 阶段2：运行环境
-FROM bellsoft/liberica-openjre-debian:${build_java_version}
+#FROM bellsoft/liberica-openjre-debian:${build_java_version}
+FROM bellsoft/liberica-openjdk-debian:${build_java_version}
 #FROM maven:3.8.8-amazoncorretto-17-debian-bookworm
 # 初始化软件源
 ADD debian.sources /etc/apt/sources.list.d/debian.sources
