@@ -68,6 +68,16 @@ RUN apt update \
 	&& apt autopurge -y \
 	&& apt clean \
 	&& rm -rf /var/lib/apt/lists/*
+# Install maven
+ENV MAVEN_VERSION=3.9.6
+ENV MAVEN_HOME=/opt/maven
+RUN wget https://dlcdn.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz -O /tmp/maven.tar.gz && \
+    mkdir -p ${MAVEN_HOME} && \
+    tar -xzf /tmp/maven.tar.gz -C ${MAVEN_HOME} --strip-components=1 && \
+    rm /tmp/maven.tar.gz
+# 设置环境变量
+ENV PATH=${MAVEN_HOME}/bin:${PATH}
+
 # 拷贝程序
 COPY --from=builder /gdal-install/. /usr/local/
 # 配置环境变量
