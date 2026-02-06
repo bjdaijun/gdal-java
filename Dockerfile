@@ -4,7 +4,7 @@ ARG build_java_version=17
 
 # 阶段1：构建
 #FROM bellsoft/liberica-openjdk-debian:${build_java_version} AS builder
-FROM maven:3.8.8-amazoncorretto-17-al2023
+FROM maven:3.8.8-amazoncorretto-17-al2023  AS builder
 # GDAL版本
 ARG gdal_version=3.11.3
 # 初始化软件源
