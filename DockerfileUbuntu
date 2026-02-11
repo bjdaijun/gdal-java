@@ -32,7 +32,7 @@ RUN apt install -y aria2 \
     libcurl4-gnutls-dev libcrypto++-dev libdeflate-dev libexpat1-dev libfreexl-dev \
     libfyba-dev libgeotiff-dev libgeos-dev libgif-dev libheif-dev \
     libhdf4-alt-dev libhdf5-dev libjpeg-dev libtiff-dev libpng-dev libkml-dev libnetcdf-dev \
-    libjson-c-dev libjxl-dev liblerc-dev libaec-dev \
+    libjson-c-dev liblerc-dev libaec-dev \
     liblzma-dev libxml2-dev liblz4-dev libmuparser-dev \
     libmysql++-dev libmariadb-dev libpq-dev \
     libopenexr-dev libopenjp2-7-dev libssl-dev libpcre2-dev \
@@ -93,7 +93,7 @@ RUN apt update && \
     libgif7 libheif1 libhdf4-0-alt libhdf5-103-1 libjpeg62-turbo \
     libtiff5 libpng16-16 libnetcdf19 \
     libkmlbase1 libkmldom1 libkmlengine1 \
-    libjson-c5 libjxl0.7 liblerc4 libaec0 \
+    libjson-c5  liblerc4 libaec0 \
     liblzma5 libxml2 liblz4-1 libmuparser2v5 \
     libmysql++3v5 libmariadb3 libpq5 \
     libopenexr-3-1-30 libopenjp2-7 libssl3 \
