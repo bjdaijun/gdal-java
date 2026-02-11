@@ -1,7 +1,7 @@
 # 构建参数
 ARG build_java_version=17
 ARG gdal_version=3.11.3        # 注意：3.11.3 可能未发布，请确认
-ARG cuda_version=12.4.1          # 用于最终运行阶段
+ARG cuda_version=12.9.1          # 用于最终运行阶段
 
 # ================= 阶段1：构建 GDAL（Ubuntu 22.04 + OpenJDK 17）=================
 FROM ubuntu:22.04 AS builder
@@ -60,7 +60,7 @@ RUN cd /gdal-src \
     && make install
 
 # ================= 阶段2：运行环境（基于 CUDA + Ubuntu 22.04）=================
-FROM nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
+FROM nvidia/cuda:12.9.1-cudnn-runtime-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
