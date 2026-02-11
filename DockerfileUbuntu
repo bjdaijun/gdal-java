@@ -19,11 +19,6 @@ RUN apt update && \
                    wget ca-certificates gnupg \
                    software-properties-common
 
-# 添加 PostgreSQL APT 仓库（用于 libpq-dev 等）
-RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ jammy-pgdg main" > /etc/apt/sources.list.d/pgdg.list
-
-RUN apt update
 
 # 安装 GDAL 编译依赖
 RUN apt install -y aria2 \
@@ -34,7 +29,7 @@ RUN apt install -y aria2 \
     libhdf4-alt-dev libhdf5-dev libjpeg-dev libtiff-dev libpng-dev libkml-dev libnetcdf-dev \
     libjson-c-dev liblerc-dev libaec-dev \
     liblzma-dev libxml2-dev liblz4-dev libmuparser-dev \
-    libmysql++-dev libmariadb-dev libpq-dev \
+    
     libopenexr-dev libopenjp2-7-dev libssl-dev libpcre2-dev \
     libpoppler-dev libqhull-dev librasterlite2-dev libspatialite-dev \
     libsqlite3-dev libsfcgal-dev libwebp-dev libxerces-c-dev \
@@ -81,8 +76,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu jammy main restricted universe mu
     echo "deb http://archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
     echo "deb http://archive.ubuntu.com/ubuntu jammy-security main restricted universe multiverse" >> /etc/apt/sources.list
 
-RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ jammy-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+
 
 # 安装 GDAL 运行依赖
 RUN apt update && \
@@ -95,7 +89,7 @@ RUN apt update && \
     libkmlbase1 libkmldom1 libkmlengine1 \
     libjson-c5  liblerc4 libaec0 \
     liblzma5 libxml2 liblz4-1 libmuparser2v5 \
-    libmysql++3v5 libmariadb3 libpq5 \
+  
     libopenexr-3-1-30 libopenjp2-7 libssl3 \
     libpcre2-8-0 libpcre2-16-0 libpcre2-32-0 libpcre2-posix3 \
     libpoppler126 libqhull8.0 libqhull-r8.0 libqhullcpp8.0 \
